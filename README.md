@@ -22,7 +22,7 @@ To install Zero Gravity locally for development or personal use:
 
 2. **Install dependencies**:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Compile the extension**:

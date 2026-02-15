@@ -37,7 +37,13 @@ To install Zero Gravity locally for development or personal use:
    ```
 
 5. **Install in VS Code**:
-   Drag and drop the generated `.vsix` file into your VS Code extensions view or use the "Install from VSIX..." command.
+   - **GUI Method**: Drag and drop the generated `.vsix` file into your VS Code **Extensions** view, or click the **"..."** (More Actions) button and select **"Install from VSIX..."**.
+   - **CLI Method**: Install directly via your terminal:
+     ```bash
+     code --install-extension zero-gravity-0.0.2.vsix
+     ```
+     > **Note**: Depending on your system alias, the `code` command might be named differently (e.g., `agy` or `cursor`).
+   
 
 ## 🔍 How It Works (Deep Dive)
 
@@ -72,6 +78,13 @@ You can customize Zero Gravity in your VS Code settings:
 - `zeroGravity.showInStatusBar`: Toggle the bottom-right monitor.
 - `zeroGravity.refreshInterval`: Set how often (in minutes) sensors should sync with the server.
 
-## 📄 License
+## �️ Screenshots
+
+<p align="center">
+  <img src="screenshorts/snap1.png" width="45%" alt="Zero Gravity Sidebar" />
+  <img src="screenshorts/snap2.png" width="45%" alt="Zero Gravity Analytics Dashboard" />
+</p>
+
+## �📄 License
 
 MIT License - See the [LICENSE](./LICENSE) file for details.

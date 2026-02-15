@@ -20,6 +20,23 @@
         vscode.postMessage({ type: 'refresh' });
     };
 
+    function formatDate(dateStr) {
+        if (!dateStr || dateStr === 'PERSISTENT') return null;
+        try {
+            const date = new Date(dateStr);
+            if (isNaN(date.getTime())) return null;
+            
+            return new Intl.DateTimeFormat(undefined, {
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+            }).format(date);
+        } catch (e) {
+            return null;
+        }
+    }
+
     function renderQuotas(data) {
         document.body.classList.remove('refreshing');
         if (!data || data.length === 0) {
@@ -40,6 +57,8 @@
             const circumference = 2 * Math.PI * radius;
             const offset = circumference - (perc / 100) * circumference;
 
+            const resetTimeFormatted = formatDate(m.quotaInfo?.resetTime);
+
             return `
                 <div class="card" style="--status-color: ${color}; animation-delay: ${index * 0.1}s">
                     <div class="model-name">${m.label}</div>
@@ -50,7 +69,10 @@
                         </svg>
                         <div class="percentage">${perc}%</div>
                     </div>
-                    <div class="reset-info">CYCLE RESET: ${m.quotaInfo?.resetTime || 'PERSISTENT'}</div>
+                    <div class="reset-info">
+                        <span class="reset-label">${resetTimeFormatted ? 'Cycle Reset' : 'Quota Type'}</span>
+                        <span class="reset-time">${resetTimeFormatted || 'Persistent Orbit'}</span>
+                    </div>
                 </div>
             `;
         }).join('');

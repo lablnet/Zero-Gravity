@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; style-src ${webview.cspSource}; script-src 'nonce-${nonce}';">
+    <link href="${styleUri}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="title">Zero Gravity</div>
+        <button onclick="refresh()">Sync Orbit</button>
+    </div>
+    <div id="quota-list" class="container">
+        <p>Initializing sensors...</p>
+    </div>
+    <script nonce="${nonce}" src="${scriptUri}"></script>
+</body>
+
+</html>

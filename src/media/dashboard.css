@@ -1,0 +1,160 @@
+:root {
+    --bg-color: var(--vscode-sideBar-background);
+    --card-bg: var(--vscode-editor-background);
+    --text-color: var(--vscode-foreground);
+    --accent-color: var(--vscode-button-background);
+    --border-color: var(--vscode-divider);
+}
+
+body {
+    font-family: var(--vscode-font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 15px;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--text-color);
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+
+body.refreshing {
+    pointer-events: none;
+}
+
+body.refreshing .container {
+    opacity: 0.4;
+    filter: blur(2px);
+    transition: all 0.3s;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--status-color, #4facfe);
+    box-shadow: 2px 0 10px var(--status-color);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--status-color);
+}
+
+.model-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.quota-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* SVG Progress Ring */
+.progress-ring {
+    width: 64px;
+    height: 64px;
+    transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+    transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    stroke: var(--status-color);
+    stroke-linecap: round;
+}
+
+.progress-ring__background {
+    stroke: var(--border-color);
+    opacity: 0.3;
+}
+
+.percentage {
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+
+.reset-info {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    margin-top: 15px;
+    font-family: var(--vscode-editor-font-family);
+}
+
+button {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+button:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeIn 0.4s ease-out forwards;
+}

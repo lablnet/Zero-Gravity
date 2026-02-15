@@ -1,8 +1,8 @@
-# Zero Gravity 🚀
+# Zero Gravity
 
 Zero Gravity is a premium VS Code extension designed to monitor and visualize your AI model usage quotas from the Antigravity Language Server in real-time. It provides a high-end dashboard, a detailed orbital status list, and a smart status bar monitor.
 
-## ✨ Features
+## Features
 
 - **Gravity Analytics Dashboard**: A premium, visual dashboard using glassmorphism and SVG progress rings to track your quotas.
 - **Orbital Status List**: A detailed tree view showing precise remaining percentages for every model.
@@ -10,7 +10,7 @@ Zero Gravity is a premium VS Code extension designed to monitor and visualize yo
 - **Real-time Sync**: Automatic refreshing every 5 minutes (configurable) or manual "Sync Orbit" on demand.
 - **Direct Access**: Clicking the status bar instantly reveals the analytics panel.
 
-## 🚀 Installation & Build
+## Installation & Build
 
 To install Zero Gravity locally for development or personal use:
 
@@ -45,7 +45,7 @@ To install Zero Gravity locally for development or personal use:
      > **Note**: Depending on your system alias, the `code` command might be named differently (e.g., `agy` or `cursor`).
    
 
-## 🔍 How It Works (Deep Dive)
+## How It Works (Deep Dive)
 
 Zero Gravity works by communicating with the local **Antigravity Language Server** that runs in the background of your editor.
 
@@ -72,19 +72,19 @@ Zero Gravity works by communicating with the local **Antigravity Language Server
 5.  **Status Bar (`src/providers/quotaStatusBar.ts`)**:
     - Aggregates all model data to calculate a "System Average" and updates the VS Code status bar with urgency coloring.
 
-## ⚙️ Configuration
+## Configuration
 
 You can customize Zero Gravity in your VS Code settings:
 - `zeroGravity.showInStatusBar`: Toggle the bottom-right monitor.
 - `zeroGravity.refreshInterval`: Set how often (in minutes) sensors should sync with the server.
 
-## �️ Screenshots
+## Screenshots
 
 <p align="center">
   <img src="screenshorts/snap1.png" width="45%" alt="Zero Gravity Sidebar" />
   <img src="screenshorts/snap2.png" width="45%" alt="Zero Gravity Analytics Dashboard" />
 </p>
 
-## �📄 License
+## License
 
 MIT License - See the [LICENSE](./LICENSE) file for details.

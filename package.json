@@ -3,7 +3,11 @@
     "displayName": "Zero Gravity",
     "description": "Monitor your AI lift capacity and quotas in real-time.",
     "version": "0.0.2",
-    "publisher": "local",
+    "publisher": "lablnet",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lablnet/Zero-Gravity.git"
+    },
     "engines": {
         "vscode": "^1.80.0"
     },
